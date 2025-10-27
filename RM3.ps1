@@ -83,7 +83,7 @@ function Encrypt-Folder {
             Write-Host "[!] Failed to encrypt: $($File.FullName)"
         }
     }
-    Write-Host "[✔] Folder encryption complete: $FolderPath`n"
+    Write-Host "[OK] Folder encryption complete: $FolderPath`n"
 }
 
 function Decrypt-Folder {
@@ -106,7 +106,7 @@ function Decrypt-Folder {
             Write-Host "[!] Failed to decrypt: $($File.FullName)"
         }
     }
-    Write-Host "[✔] Folder decryption complete: $FolderPath`n"
+    Write-Host "[OK] Folder decryption complete: $FolderPath`n"
 }
 
 # --- User Interface ---
@@ -131,12 +131,12 @@ if ($folders.Count -eq 0) {
 
 $Key = Get-AESKey -Password $password
 
-if ($choice -eq 'E') {
+if ($choice -eq 'E' -or $choice -eq 'e') {
     foreach ($folder in $folders) {
         Encrypt-Folder -FolderPath $folder -Key $Key
     }
 }
-elseif ($choice -eq 'D') {
+elseif ($choice -eq 'D' -or $choice -eq 'd') {
     foreach ($folder in $folders) {
         Decrypt-Folder -FolderPath $folder -Key $Key
     }
