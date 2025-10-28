@@ -10,7 +10,8 @@
 # --- Configuration ---
 $EmbeddedPassword = "Test"
 $EmbeddedFolders = @(
-    "C:\Users\Admin\Downloads\Data"
+    "C:\Users\auditor-1\Documents\AllData",
+    "D:\ConfData"
 )
 $Mode = "Decrypt"   # Change to "Decrypt" to decrypt automatically instead
 
